@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>RE | Ramírez & Elizalde · Soluciones Tecnológicas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expertos en desarrollo web, automatización, seguridad informática y soporte técnico. Soluciones escalables por Fernando Ramírez y Erick Elizalde.">
+  
+  <link rel="icon" href="favicon.ico">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">RE</div>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#cotizador">Cotizador</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>Ramírez <span class="ampersand">&</span> Elizalde</h1>
+    <p class="tagline">Tecnología con criterio y código de alto impacto.</p>
+    <div class="cta-group">
+      <button class="btn-primary" onclick="scrollToSection('servicios')">Explorar servicios</button>
+      <button class="btn-secondary" onclick="scrollToSection('chatbot')">Hablar con IA</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="nosotros" class="container">
+    <h2>¿Quiénes somos?</h2>
+    <div class="nosotros-grid">
+      <p>
+        Somos una dupla de ingenieros enfocados en transformar problemas complejos en software intuitivo. 
+        Nuestra filosofía es simple: <strong>código limpio, entrega puntual y seguridad por diseño.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section id="servicios" class="container">
+    <div class="section-header">
+      <h2>Servicios Especializados</h2>
+      <p>Soluciones integrales de extremo a extremo.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">🌐</div>
+        <h3>Desarrollo Web</h3>
+        <p>Aplicaciones rápidas y optimizadas para SEO.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📱</div>
+        <h3>Desarrollo Móvil</h3>
+        <p>Experiencias nativas e híbridas de alto rendimiento.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🤖</div>
+        <h3>IA & Chatbots</h3>
+        <p>Automatización inteligente para atención al cliente.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🛡️</div>
+        <h3>Ciberseguridad</h3>
+        <p>Auditoría y protección contra vulnerabilidades.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🧠</div>
+        <h3>Capacitación</h3>
+        <p>Formación técnica para equipos IT.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🛠️</div>
+        <h3>Soporte</h3>
+        <p>Mantenimiento preventivo y correctivo.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="porque" class="container highlight">
+    <h2>¿Por qué confiar en nosotros?</h2>
+    <div class="benefits-list">
+      <div class="benefit">✔ <span>Código auditado y seguro</span></div>
+      <div class="benefit">✔ <span>Arquitectura escalable</span></div>
+      <div class="benefit">✔ <span>Trato directo (Sin intermediarios)</span></div>
+      <div class="benefit">✔ <span>Soporte 24/7 post-entrega</span></div>
+    </div>
+  </section>
+
+  <section id="cotizador" class="container">
+    <h2>Simulador de Inversión</h2>
+    <div class="cotizador-box">
+      <div class="input-group">
+        <label for="tipoWeb">Selecciona el tipo de proyecto:</label>
+        <select id="tipoWeb" onchange="cotizar()">
+          <option value="3000">Web Estática (Landing Page)</option>
+          <option value="6000">Web Autogestionable (CMS)</option>
+          <option value="10000">E-commerce / Plataforma de Pagos</option>
+        </select>
+      </div>
+      <div class="resultado-container">
+        <p id="resultado">Selecciona una opción para calcular.</p>
+      </div>
+      <div class="actions">
+        <button class="btn-download" onclick="generarPDF()">📥 Descargar propuesta (.pdf)</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="chatbot" class="container">
+    <h2>Asistente Virtual RE 🤖</h2>
+    <div class="chat-container">
+      <div id="chat" class="chat-window">
+        <p class="bot-msg">¡Hola! Soy el asistente de Fernando y Erick. ¿En qué proyecto tienes en mente?</p>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="userInput" placeholder="Pregunta por precios, tiempos..." onkeypress="if(event.key==='Enter') sendMessage()" />
+        <button onclick="sendMessage()">Enviar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="container">
+    <h2>Hablemos de tu idea</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Fernando Ramírez González</h3>
+        <a href="tel:3328076865" class="phone-link">📞 33 2807 6865</a>
+      </div>
+      <div class="contact-card">
+        <h3>Erick Iván Elizalde Ortiz</h3>
+        <a href="tel:3311445645" class="phone-link">📞 33 1144 5645</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="main-footer">
+  <p>&copy; 2026 <strong>RE · Ramirez & Elizalde</strong>. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
